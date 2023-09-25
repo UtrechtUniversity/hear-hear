@@ -11,7 +11,7 @@ library(purrr)
 
 #--------
   
-survey_ids <- read_csv("config/survey-ids.csv") 
+survey_ids <- read_csv("../config/survey-ids.csv") 
               
 surveys <- lapply(survey_ids$survey_id, function(x) fetch_survey(x, force_request = TRUE, verbose = TRUE)) %>% 
   

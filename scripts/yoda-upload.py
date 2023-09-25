@@ -15,7 +15,7 @@ session = iRODSSession(**ienv, password=passwd)
 
 irods_base_dir = '/nluu10p/home/research-hear-hear-child-participation/data/'
 
-data_objects = [os.path.abspath(os.path.join("data", file)).replace("\\", "/") for file in os.listdir("data")] # works!
+data_objects = [os.path.abspath(os.path.join("../data", file)).replace("\\", "/") for file in os.listdir("../data")] # works!
 
 for object in data_objects:
         # Get the local file name from the absolute path
