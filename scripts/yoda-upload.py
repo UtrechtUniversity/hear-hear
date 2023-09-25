@@ -27,7 +27,7 @@ for object in data_objects:
         # Upload the file to iRODS
         session.data_objects.put(object, irods_dest_path)
         
-# -----------
+# -------------
 
 # coll = session.collections.get("/"+ session.zone + "/home/")
 # print(coll.subcollections)
