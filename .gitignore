@@ -1,4 +1,5 @@
 data/
+config/survey-ids.csv
 .Rproj.user
 .Rhistory
 .RData
