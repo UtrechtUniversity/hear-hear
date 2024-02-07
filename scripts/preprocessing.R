@@ -36,29 +36,22 @@ drop_cols <- c("StartDate",
                "DistributionChannel", 
                "UserLanguage")
 
-raw_data <- lapply(files, function(x) select(x, -one_of(drop_cols)))
+preprocessed_data <- lapply(files, function(x) select(x, -one_of(drop_cols)))
 
-# # RENAME BASED ON CONFIG FILE
-# 
-# # Read the CSV file into a data frame
-# 
-# column_mapping <- read_csv("config/column-mapping.csv")
-# 
-# # Create a mapping from new_names to old_names
-# 
-# # # column_mapping <- setNames(mapping_df$old_names, mapping_df$new_names)
-# #
-# # for (i in seq_along(raw_data)) {
-# #   if (!is.null(column_mapping)) {
-# #     col_names_to_rename <- intersect(names(raw_data[[i]]), column_mapping$old_name)
-# #
-# #     if (length(col_names_to_rename) > 0) {
-# #       raw_data[[i]] <- raw_data[[i]] %>%
-# #         rename(!!!setNames(column_mapping$new_name, column_mapping$old_name[col_names_to_rename]))
-# #     }
-# #   }
-# # }
+# RENAME BASED ON CONFIG FILE
 
+# Read the CSV file into a data frame
+# mapping_df <- read_csv("config/column-mapping.csv")
+ 
+# Create a mapping from new_names to old_names
+# column_mapping <- setNames(mapping_df$old_name, mapping_df$new_name)
+
+# Rename per dataset 
+# raw_data <- rename(raw_data, !!!column_mapping)
+# csv_data <- rename(csv_data, !!!column_mapping) #works
+
+# Rename within list
+# preprocessed_data <- lapply(preprocessed_data, function(x) rename(x, !!!column_mapping))
 
 # EXPORT TO CSV
 

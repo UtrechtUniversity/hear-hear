@@ -6,10 +6,10 @@ import json
 import os
 irods.__version__
 
-with open('C:/Users/Moope001/.irods/passwd.txt', 'r') as f:
+with open('C:/Users/Moope001/.irods/passwd_fsw.txt', 'r') as f:
     passwd = f.readline().strip()
     
-with open(os.path.expanduser("C:/Users/Moope001/.irods/irods_environment.json"), "r") as f:
+with open(os.path.expanduser("C:/Users/Moope001/.irods/irods_environment_fsw.json"), "r") as f:
     ienv = json.load(f)
 session = iRODSSession(**ienv, password=passwd)
 

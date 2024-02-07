@@ -6,7 +6,7 @@ library(sjlabelled)
 raw_data <- read_sav("playground/Jongerenvragenlijst_-_meetronde_1_October_4_2023_PRE-CLEANING.sav")
 processed_data <- read_sav("playground/Jongerenvragenlijst_-_meetronde_1_October_4_2023_POST-CLEANING.sav")
 
-csv_data <- read_csv("data/2023-10-04_jongeren.csv")
+csv_data <- read_csv("playground/2023-10-04_jongeren.csv")
 
 # * Encoding: UTF-8.
 # *Data cleaning examples of dropping, renaming, recoding, and computing variables
@@ -132,14 +132,14 @@ raw_data <- rename(raw_data,
 # Read the CSV file into a data frame
 mapping_df <- read_csv("config/column-mapping.csv")
 
-# Create a mapping from new_names to old_names
-column_mapping <- setNames(mapping_df$old_names, mapping_df$new_names)
+# mapping_df <- mapping_df[-c(13:4), ]
 
+# Create a mapping from new_names to old_names
+column_mapping <- setNames(mapping_df$old_name, mapping_df$new_name)
 
 raw_data <- rename(raw_data, !!!column_mapping)
 
-csv_data <- rename(csv_data, !!!column_mapping)
-
+csv_data <- rename(csv_data, !!!column_mapping) #works
 
 # files_baseline <- lapply(files_baseline, function(x) rename(x, newnames = oldnames)
 
