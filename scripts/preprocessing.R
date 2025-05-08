@@ -38,6 +38,9 @@ drop_cols <- c("StartDate",
 
 preprocessed_data <- lapply(files, function(x) select(x, -one_of(drop_cols)))
 
+
+dummy_ic <- select(csv_data, c(`Duration (in seconds)`, `RecordedDate`, `ResponseId`))
+
 # RENAME BASED ON CONFIG FILE
 
 # Read the CSV file into a data frame
