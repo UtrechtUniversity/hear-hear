@@ -2,7 +2,7 @@ title batch script for hear hear
 
 set startTime=%time%
 
-cd "C:\Users\Moope001\OneDrive - Universiteit Utrecht\Documents\programming\hear-hear"
+cd "C:\Users\UserName\Path\To\hear-hear"
 
 Rscript "scripts/qualtrics-download.R"
 Rscript "scripts/preprocessing.R"

@@ -1,6 +1,8 @@
 data/
 
-config/survey-ids.csv
+config/survey_metadata.csv
+
+scripts/old/yoda-upload.py
 
 .Rproj.user
 .Rhistory
